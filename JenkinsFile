@@ -12,13 +12,13 @@ pipeline {
    stage('Build and Test') {
       steps {
         // build the project and create a JAR file
-        sh 'cd java-maven-sonar-argocd-k8s/spring-boot-app && mvn clean package'
+        sh 'cd spring-boot-app && mvn clean package'
       }
     }
    stage('sonarcodescan'){
             steps {
             withSonarQubeEnv('sonar') {
-              sh 'cd java-maven-sonar-argocd-k8s/spring-boot-app && mvn sonar:sonar'
+              sh 'cd spring-boot-app && mvn sonar:sonar'
               }
             }
          }
