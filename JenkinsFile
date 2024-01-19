@@ -6,7 +6,7 @@ pipeline {
   stages {
    stage('Checkout') {
       steps {
-        git credentialsId: 'key', url: 'https://kcheth@bitbucket.org/cloudzenix/sonar-app.git'
+        git url: 'https://github.com/kcheth/spring-boot-app.git'
       }
     }
    stage('Build and Test') {
